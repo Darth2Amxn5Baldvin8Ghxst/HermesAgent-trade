@@ -1,0 +1,3 @@
+ALTER TABLE public.operator_settings ALTER COLUMN risk_limits SET DEFAULT '{"floorRatio":0.94,"maxRiskPctEquity":0.01,"cushionDivisorTrade":10,"cushionDivisorOpen":4,"dailyLossPct":0.01,"weeklyLossPct":0.025,"spreadMult":1.5,"weekendCutoffMin":60}'::jsonb;
+UPDATE public.operator_settings SET risk_limits = '{"floorRatio":0.94,"maxRiskPctEquity":0.01,"cushionDivisorTrade":10,"cushionDivisorOpen":4,"dailyLossPct":0.01,"weeklyLossPct":0.025,"spreadMult":1.5,"weekendCutoffMin":60}'::jsonb
+WHERE risk_limits = '{"floorRatio":0.92,"maxRiskPctEquity":0.015,"cushionDivisorTrade":8,"cushionDivisorOpen":3,"dailyLossPct":0.02,"weeklyLossPct":0.04,"spreadMult":2,"weekendCutoffMin":30}'::jsonb;

@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794342492252,
+      "tag": "0000_hermes_core_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794874875627,
+      "tag": "0001_tighten_default_risk_limits",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795267592627,
+      "tag": "0002_migration",
+      "breakpoints": true
+    }
+  ]
+}

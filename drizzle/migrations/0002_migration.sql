@@ -1,0 +1,1 @@
+alter table public.operator_settings add column if not exists mt5_token_hash text unique;

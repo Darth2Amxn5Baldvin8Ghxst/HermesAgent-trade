@@ -1,0 +1,52 @@
+{
+  "sonic-decoded": {
+    "number": 1,
+    "status": "Implemented in engine",
+    "module": "engine/montecarlo.ts"
+  },
+  "book-at-a-glance": {
+    "number": 2,
+    "status": "Implemented in engine",
+    "module": "engine/agents/*"
+  },
+  "g1-session-liquidity-reversion": {
+    "number": 3,
+    "status": "Implemented in engine",
+    "module": "engine/agents/g1.ts"
+  },
+  "g2-macro-release-drift": {
+    "number": 4,
+    "status": "Implemented in engine",
+    "module": "engine/agents/g2.ts"
+  },
+  "g3-gold-silver-spread": {
+    "number": 5,
+    "status": "Implemented in engine",
+    "module": "engine/agents/g3.ts"
+  },
+  "g4-vol-targeted-trend": {
+    "number": 6,
+    "status": "Implemented in engine",
+    "module": "engine/agents/g4.ts"
+  },
+  "risk-gateway": {
+    "number": 7,
+    "status": "Implemented in engine",
+    "module": "engine/gateway.ts"
+  },
+  "overseer": {
+    "number": 8,
+    "status": "Implemented in engine",
+    "module": "engine/overseer.ts"
+  },
+  "validation-gate": {
+    "number": 9,
+    "status": "Implemented in engine",
+    "module": "engine/validation.ts"
+  },
+  "corpus-coverage": {
+    "number": 10,
+    "status": "Reference only",
+    "module": null
+  }
+}

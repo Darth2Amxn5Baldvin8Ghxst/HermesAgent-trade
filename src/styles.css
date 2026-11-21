@@ -1,0 +1,337 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * HYPER-TERMINAL design system (spec §2). Gold is reserved for value/state, never ornament.
+ * Themes: default dark, .theme-ultra (deeper blacks), .theme-light (Swiss institutional, for print).
+ * Density: .density-compact drops row height 40 → 28px and body text 14 → 12px.
+ */
+@theme inline {
+  --font-display: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Source Serif 4", Georgia, serif;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 16px;
+  --radius-pill: 999px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--gold-500);
+  --color-chart-2: var(--info);
+  --color-chart-3: var(--pos);
+  --color-chart-4: var(--neg);
+  --color-chart-5: var(--ink-1);
+  --color-sidebar: var(--surface-1);
+  --color-sidebar-foreground: var(--ink-0);
+  --color-sidebar-primary: var(--gold-500);
+  --color-sidebar-primary-foreground: var(--surface-0);
+  --color-sidebar-accent: var(--surface-3);
+  --color-sidebar-accent-foreground: var(--ink-0);
+  --color-sidebar-border: var(--border-0);
+  --color-sidebar-ring: var(--gold-500);
+
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-ink-0: var(--ink-0);
+  --color-ink-1: var(--ink-1);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
+  --color-warn: var(--warn);
+  --color-info: var(--info);
+  --color-breach: var(--breach);
+  --color-line-0: var(--border-0);
+  --color-line-1: var(--border-1);
+  --color-line-gold: var(--border-gold);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.6);
+  --shadow-gold: var(--gold-glow);
+
+  --ease-terminal: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root {
+  --surface-0: #08090b;
+  --surface-1: #0e1013;
+  --surface-2: #15181d;
+  --surface-3: #1c2028;
+  --surface-glass: rgba(14, 16, 19, 0.72);
+  --ink-0: #f2f4f7;
+  --ink-1: #b6bcc7;
+  --ink-2: #6e7686;
+  --ink-3: #3f4551;
+  --gold-300: #f5d68a;
+  --gold-400: #e6b94f;
+  --gold-500: #c79a2e;
+  --gold-600: #9a7520;
+  --gold-glow: 0 0 24px rgba(199, 154, 46, 0.28);
+  --pos: #34d399;
+  --neg: #f87171;
+  --warn: #fbbf24;
+  --info: #60a5fa;
+  --breach: #dc2626;
+  --border-0: rgba(255, 255, 255, 0.06);
+  --border-1: rgba(255, 255, 255, 0.1);
+  --border-gold: rgba(199, 154, 46, 0.35);
+
+  --row-h: 40px;
+  --body-size: 14px;
+  --body-lh: 22px;
+
+  --background: var(--surface-0);
+  --foreground: var(--ink-0);
+  --card: var(--surface-2);
+  --card-foreground: var(--ink-0);
+  --popover: var(--surface-1);
+  --popover-foreground: var(--ink-0);
+  --primary: var(--gold-500);
+  --primary-foreground: var(--surface-0);
+  --secondary: var(--surface-3);
+  --secondary-foreground: var(--ink-0);
+  --muted: var(--surface-3);
+  --muted-foreground: var(--ink-2);
+  --accent: var(--surface-3);
+  --accent-foreground: var(--ink-0);
+  --destructive: var(--breach);
+  --destructive-foreground: var(--ink-0);
+  --border: var(--border-1);
+  --input: var(--border-1);
+  --ring: var(--gold-500);
+  --radius: 8px;
+}
+
+.theme-ultra {
+  --surface-0: #000000;
+  --surface-1: #060708;
+  --surface-2: #0b0c0f;
+  --surface-3: #121418;
+  --surface-glass: rgba(6, 7, 8, 0.78);
+}
+
+.theme-light {
+  --surface-0: #fbfaf7;
+  --surface-1: #f3f1ec;
+  --surface-2: #ffffff;
+  --surface-3: #ebe8e1;
+  --surface-glass: rgba(251, 250, 247, 0.85);
+  --ink-0: #111316;
+  --ink-1: #3a3f48;
+  --ink-2: #6b717c;
+  --ink-3: #a8adb6;
+  --gold-300: #8a6714;
+  --gold-400: #7d5d12;
+  --gold-500: #6e5210;
+  --gold-600: #5a430d;
+  --gold-glow: none;
+  --pos: #0f7a52;
+  --neg: #b42318;
+  --warn: #a16207;
+  --info: #1d4ed8;
+  --breach: #b91c1c;
+  --border-0: rgba(0, 0, 0, 0.06);
+  --border-1: rgba(0, 0, 0, 0.12);
+  --border-gold: rgba(110, 82, 16, 0.35);
+}
+
+.density-compact {
+  --row-h: 28px;
+  --body-size: 12px;
+  --body-lh: 18px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html,
+  body {
+    background-color: var(--surface-0);
+    color: var(--ink-0);
+    font-family: var(--font-sans);
+    font-size: var(--body-size);
+    line-height: var(--body-lh);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--border-gold);
+  }
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: var(--surface-3);
+    border-radius: 999px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .t-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .t-heading {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .t-label {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--ink-2);
+  }
+  .t-num {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings:
+      "tnum" 1,
+      "zero" 1;
+  }
+  .t-mono {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 20px;
+    font-variant-numeric: tabular-nums;
+  }
+  .panel {
+    background: var(--surface-1);
+    border: 1px solid var(--border-0);
+    border-radius: 12px;
+  }
+  .card-t {
+    background: var(--surface-2);
+    border: 1px solid var(--border-0);
+    border-radius: 12px;
+  }
+  .glass {
+    background: var(--surface-glass);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
+  .row-t {
+    height: var(--row-h);
+  }
+  .gold-glow {
+    box-shadow: var(--gold-glow);
+  }
+  .hairline-gold {
+    border-color: var(--border-gold);
+  }
+  .flash-pos {
+    animation: flash-pos 400ms var(--ease-terminal);
+  }
+  .flash-neg {
+    animation: flash-neg 400ms var(--ease-terminal);
+  }
+  .book-prose {
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 29px;
+    color: var(--ink-1);
+  }
+  .book-prose strong {
+    color: var(--ink-0);
+    font-weight: 600;
+  }
+  .book-dropcap::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 52px;
+    padding: 6px 10px 0 0;
+    color: var(--gold-400);
+    font-weight: 600;
+  }
+  .kill-ring {
+    animation: kill-spin 10s linear forwards;
+  }
+}
+
+@keyframes flash-pos {
+  0% {
+    background-color: color-mix(in srgb, var(--pos) 28%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes flash-neg {
+  0% {
+    background-color: color-mix(in srgb, var(--neg) 28%, transparent);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+@keyframes kill-spin {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 176;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
